@@ -1,10 +1,6 @@
-import {AppBar} from "@mui/material";
-
-function Footer() {
+export const Footer = () => {
   return (
     <div id="foot">
     </div>
   );
 }
-
-export default Footer;

@@ -1,7 +1,7 @@
 import logo from "../../Assets/resources/logo.svg";
 import React from "react";
 
-function FAQ() {
+export const FAQ = () => {
   return (
     <div className="home">
       <header className="App-header">
@@ -21,5 +21,3 @@ function FAQ() {
     </div>
   );
 }
-
-export default FAQ;

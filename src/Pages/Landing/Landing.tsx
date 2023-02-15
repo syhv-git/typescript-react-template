@@ -2,7 +2,7 @@ import logo from "../../Assets/resources/logo.svg";
 import React from "react";
 import './Assets/styles/css/App.css';
 
-function Landing() {
+export const Landing = () => {
     return (
         <div className="home">
             <header className="App-header">
@@ -22,5 +22,3 @@ function Landing() {
         </div>
     );
 }
-
-export default Landing;
