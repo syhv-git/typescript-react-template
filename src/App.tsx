@@ -8,6 +8,7 @@ import { Landing } from "./Pages/Landing/Landing";
 import { Products } from "./Pages/Products/Products";
 import { FAQ } from "./Pages/FAQ/FAQ";
 import { Loading } from "./Pages/Loading/Loading";
+import styled from "styled-components";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       }]
   },
 ])
+
+const appStyle = styled.div`
+  display: flex;
+`;
 
 export const App: React.FC = () => {
   return (
