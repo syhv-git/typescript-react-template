@@ -4,12 +4,12 @@ const pages = ["Home", "Products", "FAQs"];
 const settings = ["Mode"];
 
 function NavBar() {
-    return (
-        <div id="nav">
-            <AppBar>
-            </AppBar>
-        </div>
-    );
+  return (
+    <div id="nav">
+      <AppBar>
+      </AppBar>
+    </div>
+  );
 }
 
-export default NavBar
+export default NavBar;

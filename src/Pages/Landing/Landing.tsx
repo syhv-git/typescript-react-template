@@ -4,7 +4,7 @@ import './Assets/styles/css/App.css';
 
 function Landing() {
     return (
-        <div className="App">
+        <div className="home">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>
