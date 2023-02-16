@@ -41,10 +41,8 @@ const router = createBrowserRouter([
 ]);
 
 const Body = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
+  min-height: 100%;
   max-height: fit-content;
   margin: 0 0 0 0;
   padding: 0 0 0 0;

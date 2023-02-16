@@ -1,33 +1,68 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
 import {
   AppBar,
-  Button
+  Button,
+  IconButton,
+  styled as muistyle,
+  Toolbar,
+  Typography
 } from "@mui/material";
 import styled from "styled-components";
 
 const pages = ["Home", "Products", "FAQs"];
 const settings = ["Mode"];
 
-const NavStyle = styled.div`
-  width: 100vw;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+const ToolbarStyle = muistyle(Toolbar)({
+  justifyContent: "center",
+  alignItems: "center",
+});
+
+const Logo = muistyle(IconButton)({
+
+})
+
+const NavBlock = styled.span`
+  display: flex;
+  justify-items: space-between;
 `;
 
-const NavItem = styled.div`
-`;
+const NavButton = muistyle(Button)({
+  color: "white",
+  margin: "0 5px",
+  borderRadius: "42px",
+  textTransform: "none",
+  '&:hover': {
+    background: "rgba(0, 0, 0, 0.2)"
+  }
+})
 
 const NavBar = () => {
 
   return (
     <>
-      <NavStyle>
-        <AppBar>
-        </AppBar>
-      </NavStyle>
-      <Outlet />
+      <AppBar position="sticky">
+        <ToolbarStyle>
+          <NavBlock>
+            <NavButton>
+              <Typography variant="body1">
+                Products
+              </Typography>
+            </NavButton>
+            <NavButton>
+              <Typography variant="body1">
+                FAQs
+              </Typography>
+            </NavButton>
+            <NavButton>
+              <Typography variant="body1">
+                Contact Us
+              </Typography>
+            </NavButton>
+          </NavBlock>
+        </ToolbarStyle>
+      </AppBar>
+      <Outlet/>
     </>
   );
 }
