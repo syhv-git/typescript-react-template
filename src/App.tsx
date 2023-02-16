@@ -9,6 +9,7 @@ import { Products } from "./Pages/Products/Products";
 import { FAQ } from "./Pages/FAQ/FAQ";
 import { Loading } from "./Pages/Loading/Loading";
 import styled from "styled-components";
+import { Footer } from "./Components/Footer/Footer";
 
 const router = createBrowserRouter([
   {
@@ -25,9 +26,19 @@ const router = createBrowserRouter([
       {
         path: 'FAQs',
         element: <FAQ />,
-      }]
+      },
+    ]
   },
-])
+  {
+    element: <Footer />,
+    children: [
+      {
+        path: 'FAQs',
+        element: <FAQ />
+      },
+    ]
+  }
+]);
 
 const Body = styled.div`
   display: flex;
@@ -39,10 +50,13 @@ const Body = styled.div`
   padding: 0 0 0 0;
 `;
 
-export const App: React.FC = () => {
+const App: React.FC = () => {
+
   return (
     <Body >
       <RouterProvider router={router} fallbackElement={<Loading />} />
     </Body>
   );
 }
+
+export { App }

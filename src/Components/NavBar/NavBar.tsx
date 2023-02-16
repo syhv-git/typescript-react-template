@@ -1,17 +1,35 @@
-import {AppBar, Button} from "@mui/material";
-import {Outlet} from "react-router-dom";
+import React, { useContext } from "react";
+import { Outlet } from "react-router-dom";
+import {
+  AppBar,
+  Button
+} from "@mui/material";
+import styled from "styled-components";
 
 const pages = ["Home", "Products", "FAQs"];
 const settings = ["Mode"];
 
-export const NavBar = () => {
+const NavStyle = styled.div`
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+`;
+
+const NavItem = styled.div`
+`;
+
+const NavBar = () => {
+
   return (
     <>
-      <div id="nav">
+      <NavStyle>
         <AppBar>
         </AppBar>
-      </div>
+      </NavStyle>
       <Outlet />
     </>
   );
 }
+
+export { NavBar }

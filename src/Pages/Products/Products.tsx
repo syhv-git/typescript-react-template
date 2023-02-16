@@ -1,7 +1,7 @@
 import logo from "../../Assets/resources/logo.svg";
 import React from "react";
 
-export const Products = () => {
+const Products = () => {
   return (
     <div className="home">
       <header className="App-header">
@@ -21,3 +21,5 @@ export const Products = () => {
     </div>
   );
 }
+
+export { Products }
