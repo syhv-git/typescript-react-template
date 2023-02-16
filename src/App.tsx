@@ -29,14 +29,20 @@ const router = createBrowserRouter([
   },
 ])
 
-const appStyle = styled.div`
+const Body = styled.div`
   display: flex;
+  flex-flow: column nowrap;
+  width: 100vw;
+  min-height: 100vh;
+  max-height: fit-content;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
 `;
 
 export const App: React.FC = () => {
   return (
-    <div className="App" >
+    <Body >
       <RouterProvider router={router} fallbackElement={<Loading />} />
-    </div>
+    </Body>
   );
 }
