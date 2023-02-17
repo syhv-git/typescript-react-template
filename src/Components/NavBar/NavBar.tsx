@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import styled from "styled-components";
 import { ButtonLink } from "./ButtonLink";
-import { PathTitles } from "../../Reducer/types";
+import { PathTitles } from "../../Types/Types";
 import { ThemeToggle } from "./ThemeToggle";
 
 const NavLeft = styled.span`

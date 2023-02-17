@@ -1,5 +1,5 @@
 import React from "react";
-import { Mode } from "../../Reducer/types";
+import { Mode } from "../../Types/Types";
 import DarkModeTwoTone from "@mui/icons-material/DarkModeTwoTone";
 import LightModeTwoTone from "@mui/icons-material/LightModeTwoTone";
 import { IconButton } from "@mui/material";

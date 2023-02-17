@@ -7,7 +7,7 @@ import { styled as muistyle } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import {
   PathTitles,
-} from "../../Reducer/types";
+} from "../../Types/Types";
 
 const ButtonLinker = muistyle(Link)({
   textDecoration: "none",
