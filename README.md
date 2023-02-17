@@ -1,4 +1,4 @@
-# immortal9
+# typescript-react-template
 
 ## Getting Started with Create React App
 
