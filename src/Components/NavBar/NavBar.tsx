@@ -10,6 +10,7 @@ import styled from "styled-components";
 import { ButtonLink } from "./ButtonLink";
 import { PathTitles } from "../../Types/Types";
 import { ThemeToggle } from "./ThemeToggle";
+import logo from "../../Assets/resources/logo.svg";
 
 const NavLeft = styled.span`
   display: flex;
@@ -33,6 +34,11 @@ const NavRight = styled.span`
 
 const NavBar = () => {
 
+  const Logo: PathTitles = {
+    title: <img src={logo} alt="logo"/>,
+    to: "/"
+  }
+
   const navList: Array<PathTitles> = [
     {title: "Products", to: "/products"},
     {title: "FAQs", to: "/FAQs"},
@@ -44,7 +50,7 @@ const NavBar = () => {
       <AppBar position="sticky">
         <Toolbar>
           <NavLeft>
-
+            <ButtonLink title={Logo.title} to={Logo.to} />
           </NavLeft>
           <NavBlock>
             { navList.map((obj, i) => <ButtonLink key={i} title={obj.title} to={obj.to}/>) }

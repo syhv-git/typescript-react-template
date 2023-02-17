@@ -18,13 +18,13 @@ const ThemeIcon: React.FC = mode => {
 }
 
 const ThemeToggle: React.FC = () => {
-  const [ state, dispatch ] = React.useReducer(reducer, initialState)
+  const [ state, dispatch ] = React.useReducer(reducer, initialState);
 
   return (
     <IconButton onClick={ dispatch } size="large">
       { ThemeIcon(state) }
     </IconButton>
-  )
+  );
 }
 
 export { ThemeToggle }

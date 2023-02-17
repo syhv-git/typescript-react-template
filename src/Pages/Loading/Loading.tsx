@@ -1,4 +1,3 @@
-import logo from "../../Assets/resources/logo.svg";
 import React from "react";
 
 const Loading: React.FC = () => {
