@@ -15,6 +15,7 @@ const NavLeft = styled.span`
   display: flex;
   flex: 1;
   justify-content: flex-start;
+  margin-left: 18px;
 `;
 
 const NavBlock = styled.span`
@@ -27,6 +28,7 @@ const NavRight = styled.span`
   display: flex;
   flex: 1;
   justify-content: flex-end;
+  margin-right: 18px;
 `;
 
 const NavBar = () => {
@@ -45,7 +47,7 @@ const NavBar = () => {
 
           </NavLeft>
           <NavBlock>
-            { navList.map((obj) => <ButtonLink title={obj.title} to={obj.to}/>) }
+            { navList.map((obj, i) => <ButtonLink key={i} title={obj.title} to={obj.to}/>) }
           </NavBlock>
           <NavRight>
             <ThemeToggle/>
