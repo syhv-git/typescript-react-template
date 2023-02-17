@@ -1,66 +1,56 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import {
+  Outlet
+} from "react-router-dom";
 import {
   AppBar,
-  Button,
-  IconButton,
-  styled as muistyle,
   Toolbar,
-  Typography
 } from "@mui/material";
 import styled from "styled-components";
+import { ButtonLink } from "./ButtonLink";
+import { PathTitles } from "../../Reducer/types";
+import { ThemeToggle } from "./ThemeToggle";
 
-const pages = ["Home", "Products", "FAQs"];
-const settings = ["Mode"];
-
-const ToolbarStyle = muistyle(Toolbar)({
-  justifyContent: "center",
-  alignItems: "center",
-});
-
-const Logo = muistyle(IconButton)({
-
-})
+const NavLeft = styled.span`
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+`;
 
 const NavBlock = styled.span`
   display: flex;
-  justify-items: space-between;
+  flex: 1;
+  justify-content: center;
 `;
 
-const NavButton = muistyle(Button)({
-  color: "white",
-  margin: "0 5px",
-  borderRadius: "42px",
-  textTransform: "none",
-  '&:hover': {
-    background: "rgba(0, 0, 0, 0.2)"
-  }
-})
+const NavRight = styled.span`
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+`;
 
 const NavBar = () => {
+
+  const navList: Array<PathTitles> = [
+    {title: "Products", to: "/products"},
+    {title: "FAQs", to: "/FAQs"},
+    {title: "Contact Us", to: "/"},
+  ];
 
   return (
     <>
       <AppBar position="sticky">
-        <ToolbarStyle>
+        <Toolbar>
+          <NavLeft>
+
+          </NavLeft>
           <NavBlock>
-            <NavButton>
-              <Typography variant="body1">
-                Products
-              </Typography>
-            </NavButton>
-            <NavButton>
-              <Typography variant="body1">
-                FAQs
-              </Typography>
-            </NavButton>
-            <NavButton>
-              <Typography variant="body1">
-                Contact Us
-              </Typography>
-            </NavButton>
+            { navList.map((obj) => <ButtonLink title={obj.title} to={obj.to}/>) }
           </NavBlock>
-        </ToolbarStyle>
+          <NavRight>
+            <ThemeToggle/>
+          </NavRight>
+        </Toolbar>
       </AppBar>
       <Outlet/>
     </>
