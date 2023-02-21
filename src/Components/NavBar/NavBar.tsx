@@ -8,9 +8,14 @@ import {
 } from "@mui/material";
 import styled from "styled-components";
 import ButtonLink from "../Utility/ButtonLink/ButtonLink";
-import { PathTitles } from "../../Types/Types";
+import { PathTitles } from "../../Global/Types";
 import ThemeToggle from "../Utility/ThemeToggle/ThemeToggle";
-import logo from "../../Assets/resources/logo.svg";
+import logo from "../../Assets/resources/logoC.png";
+
+const LogoStyle = styled.img`
+  width: 42px;
+  height: 42px;
+`;
 
 const NavLeft = styled.span`
   display: flex;
@@ -35,7 +40,7 @@ const NavRight = styled.span`
 export const NavBar = () => {
 
   const Logo: PathTitles = {
-    title: <img src={logo} alt="logo"/>,
+    title: <LogoStyle src={logo} alt="logo"/>,
     to: "/"
   }
 
