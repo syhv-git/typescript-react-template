@@ -1,5 +1,5 @@
 import React from "react";
-import { Mode } from "../../Types/Types";
+import { Mode } from "../../../Types/Types";
 import DarkModeTwoTone from "@mui/icons-material/DarkModeTwoTone";
 import LightModeTwoTone from "@mui/icons-material/LightModeTwoTone";
 import { IconButton } from "@mui/material";
@@ -13,11 +13,11 @@ function reducer(state: Mode): Mode {
   return "light"
 }
 
-const ThemeIcon: React.FC = mode => {
+function ThemeIcon(mode: Mode) {
   return mode === "light" ? <DarkModeTwoTone/> : <LightModeTwoTone/>
 }
 
-const ThemeToggle: React.FC = () => {
+export default function ThemeToggle() {
   const [ state, dispatch ] = React.useReducer(reducer, initialState);
 
   return (
@@ -26,5 +26,3 @@ const ThemeToggle: React.FC = () => {
     </IconButton>
   );
 }
-
-export { ThemeToggle }

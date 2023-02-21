@@ -7,13 +7,13 @@ import { styled as muistyle } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import {
   PathTitles,
-} from "../../Types/Types";
+} from "../../../Types/Types";
 
 const ButtonLinker = muistyle(Link)({
   textDecoration: "none",
 });
 
-const ButtonLink: React.FC<PathTitles> = props => {
+export default function ButtonLink(props: PathTitles) {
   let radius = "50%"
   if (typeof props.title === "string") {
     radius = "42px"
@@ -37,5 +37,3 @@ const ButtonLink: React.FC<PathTitles> = props => {
     </ButtonLinker>
   );
 }
-
-export {ButtonLink}

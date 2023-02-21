@@ -48,7 +48,7 @@ const Body = styled.div`
   padding: 0 0 0 0;
 `;
 
-const App: React.FC = () => {
+const App = () => {
 
   return (
     <Body >
