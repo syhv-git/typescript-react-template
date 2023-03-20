@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-const Loading: React.FC = () => {
-  return (
-    <div className="loading">
-      <span>loading...</span>
-    </div>
-  );
-}
+const Loading = () => {
+    return (
+        <div className="loading">
+            <span>loading...</span>
+        </div>
+    );
+};
 
-export { Loading }
+export { Loading };

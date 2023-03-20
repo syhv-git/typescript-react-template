@@ -1,60 +1,66 @@
 import React from 'react';
-import {
-  createBrowserRouter,
-  RouterProvider
-} from "react-router-dom";
-import { NavBar } from "./Components/NavBar/NavBar";
-import { Landing } from "./Pages/Landing/Landing";
-import { Products } from "./Pages/Products/Products";
-import { FAQ } from "./Pages/FAQ/FAQ";
-import { Loading } from "./Pages/Loading/Loading";
-import styled from "styled-components";
-import { Footer } from "./Components/Footer/Footer";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { NavBar } from './Components/NavBar/NavBar';
+import { Landing } from './Pages/Landing/Landing';
+import { Products } from './Pages/Products/Products';
+import { FAQ } from './Pages/FAQ/FAQ';
+import { Loading } from './Pages/Loading/Loading';
+import { Footer } from './Components/Footer/Footer';
+import { NotFound } from './Pages/Error/NotFound';
+import { ThemeProvider } from '@mui/material';
+import { GlobalReducer } from './GlobalUtility/Reducer/Reducer';
+import { GetTheme } from './GlobalUtility/Themes/Themes';
+import type { GlobalProps } from './types';
 
 const router = createBrowserRouter([
-  {
-    element: <NavBar />,
-    children: [
-      {
-        path: '/',
-        element: <Landing />,
-      },
-      {
-        path: 'products',
-        element: <Products />,
-      },
-      {
-        path: 'FAQs',
-        element: <FAQ />,
-      },
-    ]
-  },
-  {
-    element: <Footer />,
-    children: [
-      {
-        path: 'FAQs',
-        element: <FAQ />
-      },
-    ]
-  }
+    {
+        element: <NavBar />,
+        errorElement: <NotFound />,
+        children: [
+            {
+                path: '/',
+                element: <Landing />,
+            },
+            {
+                path: 'products',
+                element: <Products />,
+                errorElement: <NotFound />,
+            },
+            {
+                path: 'FAQs',
+                element: <FAQ />,
+            },
+        ],
+    },
+    {
+        element: <Footer />,
+        children: [
+            {
+                path: 'FAQs',
+                element: <FAQ />,
+            },
+        ],
+    },
 ]);
 
-const Body = styled.div`
-  width: 100%;
-  min-height: 100%;
-  max-height: fit-content;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-`;
+export function App() {
+    const initial: GlobalProps = {
+        theme: GetTheme(),
+    };
+    const [state, dispatch] = React.useReducer(GlobalReducer, initial);
 
-const App = () => {
+    const modeChanger = React.useMemo(
+        () => ({
+            ChangeTheme: () => dispatch('SET_MODE'),
+        }),
+        [],
+    );
 
-  return (
-    <Body >
-      <RouterProvider router={router} fallbackElement={<Loading />} />
-    </Body>
-  );
+    const theme = React.useMemo(() => state.theme, [state]);
+
+    return (
+        <ThemeProvider theme={theme}>
+            <RouterProvider router={router} fallbackElement={<Loading />} />
+        </ThemeProvider>
+    );
 }
-
-export { App }
