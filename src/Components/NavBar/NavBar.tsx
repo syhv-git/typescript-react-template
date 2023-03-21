@@ -5,7 +5,6 @@ import { styled } from '@mui/material/styles';
 import ButtonLink from '../Utility/ButtonLink/ButtonLink';
 import ThemeToggle from '../Utility/ThemeToggle/ThemeToggle';
 import logo from '../../assets/resources/logoC.png';
-import type { PathTitles } from '../../types';
 
 const LogoStyle = styled('img')({
     width: 42,

@@ -1,5 +1,4 @@
-import { SetTheme } from '../Themes/Themes';
-import type { GlobalProps } from '../../types';
+import { SetTheme } from '../Themes';
 
 export const GlobalReducer = (state: GlobalProps, action: string) => {
     switch (action) {

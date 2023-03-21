@@ -8,9 +8,9 @@ import { Loading } from './Pages/Loading/Loading';
 import { Footer } from './Components/Footer/Footer';
 import { NotFound } from './Pages/Error/NotFound';
 import { ThemeProvider } from '@mui/material';
-import { GlobalReducer } from './GlobalUtility/Reducer/Reducer';
-import { GetTheme } from './GlobalUtility/Themes/Themes';
-import type { GlobalProps } from './types';
+import { GlobalReducer } from './GlobalUtility/Reducer';
+import { GetTheme } from './GlobalUtility/Themes';
+import { GlobalActions, GlobalContext } from './GlobalUtility/Constants';
 
 const router = createBrowserRouter([
     {
@@ -59,8 +59,10 @@ export function App() {
     const theme = React.useMemo(() => state.theme, [state]);
 
     return (
-        <ThemeProvider theme={theme}>
-            <RouterProvider router={router} fallbackElement={<Loading />} />
-        </ThemeProvider>
+        <GlobalContext.Provider value={GlobalActions}>
+            <ThemeProvider theme={theme}>
+                <RouterProvider router={router} fallbackElement={<Loading />} />
+            </ThemeProvider>
+        </GlobalContext.Provider>
     );
 }

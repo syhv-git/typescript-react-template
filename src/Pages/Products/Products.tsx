@@ -1,5 +1,5 @@
-import logo from '../../assets/resources/logo.svg';
 import React from 'react';
+import logo from '../../assets/resources/logo.svg';
 
 const Products = () => {
     return (

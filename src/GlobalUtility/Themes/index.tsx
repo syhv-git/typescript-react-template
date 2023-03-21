@@ -1,5 +1,4 @@
 import { createTheme, useMediaQuery } from '@mui/material';
-import type { GlobalProps } from '../../types';
 
 const lightTheme = createTheme({
     palette: {

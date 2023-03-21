@@ -2,7 +2,7 @@ import React from 'react';
 import DarkModeTwoTone from '@mui/icons-material/DarkModeTwoTone';
 import LightModeTwoTone from '@mui/icons-material/LightModeTwoTone';
 import { IconButton } from '@mui/material';
-import type { GlobalProps } from '../../../types';
+import { GlobalContext, SessionProps } from '../../../GlobalUtility/Constants';
 
 export default function ThemeToggle() {
     const [state] = React.useState<GlobalProps>(SessionProps);

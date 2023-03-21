@@ -1,24 +1,22 @@
-import React from 'react';
-import { Theme } from '@mui/material';
-import { Guid } from 'guid-typescript';
+type Paths = '/' | '/products' | '/FAQs';
 
-export interface ContextActions {
+type UUID = string
+
+interface GlobalProps {
+    theme: mui.Theme;
+}
+
+interface ContextActions {
     ChangeTheme: () => void;
 }
 
-export type Paths = '/' | '/products' | '/FAQs';
-
-export interface GlobalProps {
-    theme: Theme;
-}
-
-export interface PathTitles {
+interface PathTitles {
     title: React.ReactNode;
     to: Paths;
 }
 
-export interface Product {
-    id: Guid;
+interface Product {
+    id: UUID;
     name: string;
     image: string | Array<string>;
     price: number;
@@ -26,7 +24,7 @@ export interface Product {
     avail: boolean;
 }
 
-export interface ProductInfo extends Product {
+interface ProductInfo extends Product {
     desc: string;
     qty: number;
     sub: boolean;

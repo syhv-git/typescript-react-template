@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
-import type { PathTitles } from '../../../types';
+import { SessionProps } from '../../../GlobalUtility/Constants';
 
 const ButtonLinker = styled(Link)({
     boxSizing: 'content-box',
