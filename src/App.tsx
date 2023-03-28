@@ -14,7 +14,6 @@ import { GlobalActions, SessionProps } from './GlobalUtility/Constants';
 const router = createBrowserRouter([
     {
         element: <NavBar />,
-        errorElement: <NotFound />,
         children: [
             {
                 path: '/',
