@@ -2,15 +2,18 @@ import React from 'react';
 import DarkModeTwoTone from '@mui/icons-material/DarkModeTwoTone';
 import LightModeTwoTone from '@mui/icons-material/LightModeTwoTone';
 import { IconButton } from '@mui/material';
-import { GlobalContext, SessionProps } from '../../../GlobalUtility/Constants';
+import { GlobalActions } from '../../../GlobalUtility/Constants';
 
 export default function ThemeToggle() {
-    const [state] = React.useState<GlobalProps>(SessionProps);
-    const handleChange = React.useContext(GlobalContext);
+    const { state, dispatch } = React.useContext(GlobalActions.ThemeContext);
+
+    const toggleTheme = () => {
+        dispatch({ type: 'SET_THEME' });
+    };
 
     return (
-        <IconButton onClick={handleChange.ChangeTheme} size="large">
-            {state.theme.palette.mode === 'light' ? <DarkModeTwoTone /> : <LightModeTwoTone />}
+        <IconButton onClick={toggleTheme} size="large">
+            {state.theme === 'light' ? <DarkModeTwoTone /> : <LightModeTwoTone />}
         </IconButton>
     );
 }

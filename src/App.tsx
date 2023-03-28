@@ -9,8 +9,7 @@ import { Footer } from './Components/Footer/Footer';
 import { NotFound } from './Pages/Error/NotFound';
 import { ThemeProvider } from '@mui/material';
 import { GlobalReducer } from './GlobalUtility/Reducer';
-import { GetTheme } from './GlobalUtility/Themes';
-import { GlobalActions, GlobalContext } from './GlobalUtility/Constants';
+import { GlobalActions, SessionProps } from './GlobalUtility/Constants';
 
 const router = createBrowserRouter([
     {
@@ -44,25 +43,13 @@ const router = createBrowserRouter([
 ]);
 
 export function App() {
-    const initial: GlobalProps = {
-        theme: GetTheme(),
-    };
-    const [state, dispatch] = React.useReducer(GlobalReducer, initial);
-
-    const modeChanger = React.useMemo(
-        () => ({
-            ChangeTheme: () => dispatch('SET_MODE'),
-        }),
-        [],
-    );
-
-    const theme = React.useMemo(() => state.theme, [state]);
+    const [state, dispatch] = React.useReducer(GlobalReducer, SessionProps);
 
     return (
-        <GlobalContext.Provider value={GlobalActions}>
-            <ThemeProvider theme={theme}>
+        <GlobalActions.ThemeContext.Provider value={{ state, dispatch }}>
+            <ThemeProvider theme={state.theme}>
                 <RouterProvider router={router} fallbackElement={<Loading />} />
             </ThemeProvider>
-        </GlobalContext.Provider>
+        </GlobalActions.ThemeContext.Provider>
     );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from '../../assets/resources/logo.svg';
-import { styled } from "@mui/material/styles";
+import { styled } from '@mui/material/styles';
 
 const HomeStyle = styled('div')({
-  width: "100%",
-  maxHeight: "fit-content",
-  display: "flex",
-  flexFlow: "column nowrap",
+    width: '100%',
+    maxHeight: 'fit-content',
+    display: 'flex',
+    flexFlow: 'column nowrap',
 });
 
 const Landing = () => {

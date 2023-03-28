@@ -1,22 +1,30 @@
-type Paths = '/' | '/products' | '/FAQs';
+type PathsType = '/' | '/products' | '/FAQs';
 
-type UUID = string
+type ReducerType = 'SET_THEME';
+type ReducerAction = { type: ReducerType };
 
-interface GlobalProps {
-    theme: mui.Theme;
+type UUIDType = string;
+
+interface ThemeContextType {
+    state: { theme: string };
+    dispatch: React.Dispatch<ReducerAction>;
 }
 
-interface ContextActions {
-    ChangeTheme: () => void;
+interface GlobalProps {
+    theme: Theme;
+}
+
+interface GlobalStateActions {
+    ThemeContext: React.Context<ThemeContextType>;
 }
 
 interface PathTitles {
     title: React.ReactNode;
-    to: Paths;
+    to: PathsType;
 }
 
 interface Product {
-    id: UUID;
+    id: UUIDType;
     name: string;
     image: string | Array<string>;
     price: number;
