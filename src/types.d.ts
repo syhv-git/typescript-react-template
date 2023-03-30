@@ -1,13 +1,16 @@
+/// <reference types="react/next" />
+/// <reference types="@mui/material" />
+
 type PathsType = '/' | '/products' | '/FAQs';
 
 type ReducerType = 'SET_THEME';
-type ReducerAction = { type: ReducerType };
+type ReducerActions = { type: ReducerType };
 
 type UUIDType = string;
 
 interface ThemeContextType {
     state: { theme: string };
-    dispatch: React.Dispatch<ReducerAction>;
+    dispatch: React.Dispatch<ReducerActions>;
 }
 
 interface GlobalProps {
@@ -15,11 +18,11 @@ interface GlobalProps {
 }
 
 interface GlobalStateActions {
-    ThemeContext: React.Context<ThemeContextType>;
+    ThemeContext: Context<ThemeContextType>;
 }
 
 interface PathTitles {
-    title: React.ReactNode;
+    title: ReactNode;
     to: PathsType;
 }
 

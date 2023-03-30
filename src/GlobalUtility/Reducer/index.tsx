@@ -1,6 +1,6 @@
 import { SetTheme } from '../Themes';
 
-export const GlobalReducer = (state: GlobalProps, action: ReducerAction) => {
+export const GlobalReducer = (state: GlobalProps, action: ReducerActions) => {
     switch (action.type) {
         case 'SET_THEME':
             return {

@@ -2,8 +2,11 @@
   "name": "my-app",
   "version": "0.1.0",
   "description": "my typescript-react template",
-  "main": "src/index.tsx",
-  "repository": "https://github.com/syhv-git/typescript-react-template.git",
+  "main": "build/bundle.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/syhv-git/typescript-react-template.git"
+  },
   "author": "Scott Vore <svore@hawaii.edu>",
   "license": "MIT",
   "private": true,
