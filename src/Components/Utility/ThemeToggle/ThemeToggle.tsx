@@ -5,7 +5,7 @@ import { IconButton } from '@mui/material';
 import { GlobalActions } from '../../../GlobalUtility/Constants';
 
 export default function ThemeToggle() {
-    const { state, dispatch } = React.useContext(GlobalActions.ThemeContext);
+    const { state, dispatch } = React.useContext<ThemeContextType>(GlobalActions.ThemeContext);
 
     const toggleTheme = () => {
         dispatch({ type: 'SET_THEME' });
