@@ -9,7 +9,7 @@ type UUIDType = string | Guid;
 
 interface ThemeContextType {
     state: { theme: string };
-    dispatch: Dispatch<ReducerActions>;
+    dispatch: React.Dispatch<ReducerActions>;
 }
 
 interface GlobalProps {
@@ -17,11 +17,11 @@ interface GlobalProps {
 }
 
 interface GlobalStateActions {
-    ThemeContext: Context<ThemeContextType>;
+    ThemeContext: React.Context<ThemeContextType>;
 }
 
 interface PathTitles {
-    title: ReactNode;
+    title: React.ReactNode;
     to: PathsType;
 }
 
