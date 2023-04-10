@@ -29,11 +29,9 @@ const NavButtonText = styled(Button)({
 });
 
 export default function ButtonLink(props: PathTitles) {
-    const [state] = React.useState(SessionProps);
-
     return typeof props.title === 'string' ? (
         <ButtonLinker to={props.to}>
-            <NavButtonText theme={state.theme}>
+            <NavButtonText>
                 <Typography>
                     {props.title}
                 </Typography>

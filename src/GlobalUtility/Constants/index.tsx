@@ -3,6 +3,7 @@ import { GetTheme } from "../Themes";
 
 export const SessionProps: GlobalProps = {
     theme: GetTheme('dark'),
+    isAuth: false,
 };
 
 export const GlobalActions: GlobalStateActions = {

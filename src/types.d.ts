@@ -1,19 +1,21 @@
 /// <reference types="@mui/material" />
 
-type PathsType = '/' | '/products' | '/FAQs';
-
 type ReducerType = 'SET_THEME';
 type ReducerActions = { type: ReducerType };
 
 type UUIDType = string;
 
 interface ThemeContextType {
-    state: { theme: 'light' | 'dark' };
+    state: {
+        theme: 'light' | 'dark'
+    };
     dispatch: React.Dispatch<ReducerActions>;
 }
 
 interface GlobalProps {
     theme: Theme;
+    isAuth: boolean;
+    id?: string;
 }
 
 interface GlobalStateActions {
@@ -22,7 +24,7 @@ interface GlobalStateActions {
 
 interface PathTitles {
     title: JSX.Element | string;
-    to: PathsType;
+    to: string;
 }
 
 interface Product {

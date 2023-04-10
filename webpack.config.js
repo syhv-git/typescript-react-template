@@ -1,5 +1,8 @@
+'use strict';
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (env, argv) => {
@@ -14,7 +17,9 @@ module.exports = (env, argv) => {
             path: path.resolve(__dirname, 'build'),
         },
         devServer: {
-            static: path.resolve(__dirname, 'build/bundle.js'),
+            static: {
+                directory: path.resolve(__dirname, 'build')
+            },
             port: 9000,
             hot: true,
             compress: true,
@@ -26,7 +31,7 @@ module.exports = (env, argv) => {
                     test: /\.[jt]sx?$/,
                     exclude: /node_modules/,
                     use: {
-                        loader: 'babel-loader',
+                        loader: require.resolve('babel-loader'),
                         options: {
                             presets: ['@babel/preset-env']
                         }
@@ -53,6 +58,7 @@ module.exports = (env, argv) => {
                 template: path.resolve(__dirname, 'public', 'index.html'),
             }),
             new CleanWebpackPlugin(),
+            new CompressionPlugin(),
         ],
     };
 };

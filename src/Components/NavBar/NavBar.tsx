@@ -40,8 +40,7 @@ export const NavBar = () => {
 
     const navList: Array<PathTitles> = [
         { title: 'Products', to: '/products' },
-        { title: 'FAQs', to: '/FAQs' },
-        { title: 'Contact Us', to: '/' },
+        { title: 'My Account', to: '/my-account' },
     ];
 
     const navGroup = navList.map((obj, i) => <ButtonLink key={i} title={obj.title} to={obj.to} />);

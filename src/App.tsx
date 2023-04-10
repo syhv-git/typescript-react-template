@@ -7,6 +7,9 @@ import { FAQ } from './Pages/FAQ/FAQ';
 import { Loading } from './Pages/Loading/Loading';
 import { Footer } from './Components/Footer/Footer';
 import { NotFound } from './Pages/Error/NotFound';
+import { Dashboard } from "@mui/icons-material";
+import { SignIn } from "./Pages/SignIn/SignIn";
+import { Register } from "./Pages/Register/Register";
 import { ThemeProvider } from '@mui/material';
 import { GlobalReducer } from './GlobalUtility/Reducer';
 import { GlobalActions, SessionProps } from './GlobalUtility/Constants';
@@ -24,6 +27,14 @@ const router = createBrowserRouter([
                 element: <Products />,
                 errorElement: <NotFound />,
             },
+            {
+                path: 'my-account',
+                element: <Dashboard />,
+            },
+            {
+                path: 'register',
+                element: <Register />
+            }
         ],
     },
     {

@@ -7,7 +7,7 @@ import { GlobalActions } from '../../../GlobalUtility/Constants';
 export default function ThemeToggle() {
     const { state, dispatch } = React.useContext<ThemeContextType>(GlobalActions.ThemeContext);
 
-    const themeIcon = useMemo(() => { return state.theme === 'light' ? <DarkMode /> : <LightModeTwoTone /> }, [state])
+    const themeIcon = useMemo(() => { return state.theme === 'light' ? <DarkMode /> : <LightModeTwoTone /> }, [state.theme])
 
     const toggleTheme = () => {
         dispatch({ type: 'SET_THEME' });
