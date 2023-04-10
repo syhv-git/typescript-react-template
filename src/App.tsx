@@ -50,7 +50,7 @@ const routes: RouteObject[] = [
                 ),
             },
             {
-                path: 'my-account',
+                path: 'dashboard',
                 element: (
                   <>
                       <NavBar />

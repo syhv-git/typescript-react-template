@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 
 const FooterContainer = styled('div')({
     display: 'flex',
-    minHeight: 69,
+    minHeight: 256,
 });
 
 const FooterLeft = styled('div')({
@@ -19,7 +19,6 @@ const FooterRight = styled('div')({
 });
 
 export const Footer = () => {
-
 
     return (
       <FooterContainer>
