@@ -20,23 +20,44 @@ import { GlobalStateActions, SessionProps } from './GlobalUtility/Constants';
 
 const routes: RouteObject[] = [
     {
-        element: <NavBar />,
+        path: '/',
+        element: (
+            <>
+                <NavBar />
+                <Landing />
+                <Footer />
+            </>
+        ),
         children: [
             {
-                path: '/',
-                element: <Landing />,
-            },
-            {
                 path: 'FAQs',
-                element: <FAQ />,
+                element: (
+                  <>
+                      <NavBar />
+                      <FAQ />
+                      <Footer />
+                  </>
+                ),
             },
             {
                 path: 'products',
-                element: <Products />,
+                element: (
+                  <>
+                      <NavBar />
+                      <Products />
+                      <Footer />
+                  </>
+                ),
             },
             {
                 path: 'my-account',
-                element: <Dashboard />,
+                element: (
+                  <>
+                      <NavBar />
+                      <Dashboard />
+                      <Footer />
+                  </>
+                ),
             },
             {
                 path: 'register',
