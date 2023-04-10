@@ -9,35 +9,41 @@ const ButtonLinker = styled(Link)({
     textDecoration: 'none',
 });
 
+const NavButtonIcon = styled(Button)({
+    margin: '0 5px !important',
+    borderRadius: `50% !important`,
+    textTransform: 'none',
+    ':hover': {
+        background: 'rgba(0, 0, 0, 0.2)',
+    },
+});
+
+const NavButtonText = styled(Button)({
+    color: `#FFFFFF`,
+    margin: '0 5px !important',
+    borderRadius: `42px !important`,
+    textTransform: 'none',
+    ':hover': {
+        background: 'rgba(0, 0, 0, 0.2)',
+    },
+});
+
 export default function ButtonLink(props: PathTitles) {
     const [state] = React.useState(SessionProps);
 
-    let radius = '50%';
-    if (typeof props.title === 'string') {
-        radius = '42px';
-    }
-
-    const NavButton = styled(Button)(({ theme }) => ({
-        color: theme.palette.text.primary,
-        margin: '0 5px !important',
-        borderRadius: `${radius} !important`,
-        textTransform: 'none',
-        ':hover': {
-            background: 'rgba(0, 0, 0, 0.2)',
-        },
-    }));
-
     return typeof props.title === 'string' ? (
         <ButtonLinker to={props.to}>
-            <NavButton theme={state.theme}>
-                <Typography variant="body1" align="center">
+            <NavButtonText theme={state.theme}>
+                <Typography>
                     {props.title}
                 </Typography>
-            </NavButton>
+            </NavButtonText>
         </ButtonLinker>
     ) : (
         <ButtonLinker to={props.to}>
-            <NavButton sx={{ minWidth: '42px' }}>{props.title}</NavButton>
+            <NavButtonIcon sx={{ minWidth: '42px' }}>
+                {props.title}
+            </NavButtonIcon>
         </ButtonLinker>
     );
 }

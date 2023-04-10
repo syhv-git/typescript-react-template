@@ -8,7 +8,7 @@ type ReducerActions = { type: ReducerType };
 type UUIDType = string | Guid;
 
 interface ThemeContextType {
-    state: { theme: string };
+    state: { theme: 'light' | 'dark' };
     dispatch: React.Dispatch<ReducerActions>;
 }
 
@@ -21,7 +21,7 @@ interface GlobalStateActions {
 }
 
 interface PathTitles {
-    title: React.ReactNode;
+    title: JSX.Element | string;
     to: PathsType;
 }
 

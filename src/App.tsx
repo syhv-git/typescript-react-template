@@ -7,13 +7,9 @@ import { FAQ } from './Pages/FAQ/FAQ';
 import { Loading } from './Pages/Loading/Loading';
 import { Footer } from './Components/Footer/Footer';
 import { NotFound } from './Pages/Error/NotFound';
-import {
-    ThemeProvider,
-    useMediaQuery
-} from '@mui/material';
+import { ThemeProvider } from '@mui/material';
 import { GlobalReducer } from './GlobalUtility/Reducer';
 import { GlobalActions, SessionProps } from './GlobalUtility/Constants';
-import { GetTheme } from "./GlobalUtility/Themes";
 
 const router = createBrowserRouter([
     {
@@ -46,9 +42,6 @@ const router = createBrowserRouter([
 ]);
 
 export function App() {
-    const userMode = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
-    SessionProps.theme = GetTheme(userMode);
-
     const [state, dispatch] = React.useReducer(GlobalReducer, SessionProps);
 
     return (
