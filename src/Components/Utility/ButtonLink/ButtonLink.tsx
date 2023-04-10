@@ -2,7 +2,6 @@ import React from 'react';
 import { Button, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
-import { SessionProps } from '../../../GlobalUtility/Constants';
 
 const ButtonLinker = styled(Link)({
     boxSizing: 'content-box',
@@ -32,16 +31,12 @@ export default function ButtonLink(props: PathTitles) {
     return typeof props.title === 'string' ? (
         <ButtonLinker to={props.to}>
             <NavButtonText>
-                <Typography>
-                    {props.title}
-                </Typography>
+                <Typography>{props.title}</Typography>
             </NavButtonText>
         </ButtonLinker>
     ) : (
         <ButtonLinker to={props.to}>
-            <NavButtonIcon sx={{ minWidth: '42px' }}>
-                {props.title}
-            </NavButtonIcon>
+            <NavButtonIcon sx={{ minWidth: '42px' }}>{props.title}</NavButtonIcon>
         </ButtonLinker>
     );
 }

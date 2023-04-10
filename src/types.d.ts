@@ -5,7 +5,7 @@ type ReducerActions = { type: ReducerType };
 
 interface ThemeContextType {
     state: {
-        theme: Theme
+        theme: Theme;
     };
     dispatch: React.Dispatch<ReducerActions>;
 }

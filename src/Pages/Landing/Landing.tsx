@@ -9,7 +9,7 @@ const HomeStyle = styled('div')({
     flexFlow: 'column nowrap',
 });
 
-const Landing = () => {
+export default function Landing() {
     return (
         <HomeStyle>
             <img src={logo} alt="logo" />
@@ -21,6 +21,4 @@ const Landing = () => {
             </a>
         </HomeStyle>
     );
-};
-
-export { Landing };
+}

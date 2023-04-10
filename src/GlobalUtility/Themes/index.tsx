@@ -6,7 +6,7 @@ const lightTheme = createTheme({
         text: {
             primary: '#000000',
             secondary: '#FFFFFF',
-        }
+        },
     },
 });
 
@@ -16,7 +16,7 @@ const darkTheme = createTheme({
         text: {
             primary: '#3E3E3E',
             secondary: '#DEDEDE',
-        }
+        },
     },
 });
 

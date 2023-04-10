@@ -1,15 +1,15 @@
 import React, { useMemo } from 'react';
 import { IconButton } from '@mui/material';
 import { GlobalStateActions } from '../../../GlobalUtility/Constants';
-import LightModeTwoTone from "@mui/icons-material/LightModeTwoTone";
-import DarkMode from "@mui/icons-material/DarkMode";
+import LightModeTwoTone from '@mui/icons-material/LightModeTwoTone';
+import DarkMode from '@mui/icons-material/DarkMode';
 
 export default function ThemeToggle() {
     const { state, dispatch } = React.useContext<ThemeContextType>(GlobalStateActions.ThemeContext);
 
     const icon = useMemo(() => {
-        return state.theme.palette.mode === 'light' ? <DarkMode /> : <LightModeTwoTone />
-    }, [state.theme.palette.mode])
+        return state.theme.palette.mode === 'light' ? <DarkMode /> : <LightModeTwoTone />;
+    }, [state.theme.palette.mode]);
 
     const toggleTheme = () => {
         dispatch({ type: 'SET_THEME' });
@@ -17,7 +17,7 @@ export default function ThemeToggle() {
 
     return (
         <IconButton onClick={toggleTheme} size="large">
-            { icon }
+            {icon}
         </IconButton>
     );
 }

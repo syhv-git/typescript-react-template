@@ -1,19 +1,15 @@
 import React from 'react';
-import {
-    createBrowserRouter,
-    RouteObject,
-    RouterProvider
-} from 'react-router-dom';
-import { NavBar } from './Components/NavBar/NavBar';
-import { Landing } from './Pages/Landing/Landing';
+import { createBrowserRouter, RouteObject, RouterProvider } from 'react-router-dom';
+import NavBar from './Components/NavBar/NavBar';
+import Landing from './Pages/Landing/Landing';
 import { Products } from './Pages/Products/Products';
 import { FAQ } from './Pages/FAQ/FAQ';
 import { Loading } from './Pages/Loading/Loading';
 import { Footer } from './Components/Footer/Footer';
 import { NotFound } from './Pages/Error/NotFound';
-import { Dashboard } from "@mui/icons-material";
-import { SignIn } from "./Pages/SignIn/SignIn";
-import { Register } from "./Pages/Register/Register";
+import { Dashboard } from '@mui/icons-material';
+import { SignIn } from './Pages/SignIn/SignIn';
+import { Register } from './Pages/Register/Register';
 import { ThemeProvider } from '@mui/material';
 import { GlobalReducer } from './GlobalUtility/Reducer';
 import { GlobalStateActions, SessionProps } from './GlobalUtility/Constants';
@@ -32,39 +28,39 @@ const routes: RouteObject[] = [
             {
                 path: 'FAQs',
                 element: (
-                  <>
-                      <NavBar />
-                      <FAQ />
-                      <Footer />
-                  </>
+                    <>
+                        <NavBar />
+                        <FAQ />
+                        <Footer />
+                    </>
                 ),
             },
             {
                 path: 'products',
                 element: (
-                  <>
-                      <NavBar />
-                      <Products />
-                      <Footer />
-                  </>
+                    <>
+                        <NavBar />
+                        <Products />
+                        <Footer />
+                    </>
                 ),
             },
             {
                 path: 'dashboard',
                 element: (
-                  <>
-                      <NavBar />
-                      <Dashboard />
-                      <Footer />
-                  </>
+                    <>
+                        <NavBar />
+                        <Dashboard />
+                        <Footer />
+                    </>
                 ),
             },
             {
                 path: 'register',
-                element: <Register />
+                element: <Register />,
             },
         ],
-    }
+    },
 ];
 
 const router = createBrowserRouter(routes);

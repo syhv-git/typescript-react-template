@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { GetTheme } from "../Themes";
+import { GetTheme } from '../Themes';
 
 export const SessionProps: GlobalProps = {
     theme: GetTheme('dark'),

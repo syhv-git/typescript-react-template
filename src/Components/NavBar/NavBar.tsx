@@ -32,7 +32,7 @@ const NavRight = styled('span')({
     marginRight: 18,
 });
 
-export const NavBar = () => {
+export default function NavBar() {
     const Logo: PathTitles = {
         title: <LogoStyle src={logo} alt="logo" />,
         to: '/',

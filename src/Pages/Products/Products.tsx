@@ -15,6 +15,6 @@ export default function Products() {
             </header>
         </div>
     );
-};
+}
 
 export { Products };
