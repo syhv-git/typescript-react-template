@@ -15,7 +15,7 @@ module.exports = (env, argv) => {
         },
         devServer: {
             static: path.resolve(__dirname, 'build/bundle.js'),
-            port: 3000,
+            port: 9000,
             hot: true,
             compress: true,
             open: true,

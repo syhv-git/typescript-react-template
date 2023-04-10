@@ -1,4 +1,4 @@
-import { createTheme, useMediaQuery } from '@mui/material';
+import { createTheme } from '@mui/material';
 
 const lightTheme = createTheme({
     palette: {
@@ -12,8 +12,8 @@ const darkTheme = createTheme({
     },
 });
 
-export const GetTheme = () => {
-    return useMediaQuery('(prefers-color-scheme: dark)') ? darkTheme : lightTheme;
+export const GetTheme = (mode: string) => {
+    return mode === 'dark' ? darkTheme : lightTheme;
 };
 
 export const SetTheme = (state: GlobalProps) => {
