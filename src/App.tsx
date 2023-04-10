@@ -24,10 +24,6 @@ const router = createBrowserRouter([
                 element: <Products />,
                 errorElement: <NotFound />,
             },
-            {
-                path: 'FAQs',
-                element: <FAQ />,
-            },
         ],
     },
     {

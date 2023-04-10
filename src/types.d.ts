@@ -5,7 +5,7 @@ type PathsType = '/' | '/products' | '/FAQs';
 type ReducerType = 'SET_THEME';
 type ReducerActions = { type: ReducerType };
 
-type UUIDType = string | Guid;
+type UUIDType = string;
 
 interface ThemeContextType {
     state: { theme: 'light' | 'dark' };
