@@ -7,7 +7,7 @@ type UUIDType = string;
 
 interface ThemeContextType {
     state: {
-        theme: 'light' | 'dark'
+        theme: Theme
     };
     dispatch: React.Dispatch<ReducerActions>;
 }

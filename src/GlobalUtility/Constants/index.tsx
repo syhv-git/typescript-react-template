@@ -9,7 +9,7 @@ export const SessionProps: GlobalProps = {
 export const GlobalActions: GlobalStateActions = {
     ThemeContext: createContext<ThemeContextType>({
         state: {
-            theme: SessionProps.theme.palette.mode,
+            theme: SessionProps.theme,
         },
         dispatch: () => {
             /* placeholder */
