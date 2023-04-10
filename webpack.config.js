@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (env, argv) => {
     const isDev = argv.mode === 'development'
@@ -14,7 +14,7 @@ module.exports = (env, argv) => {
             path: path.resolve(__dirname, 'build'),
         },
         devServer: {
-            contentBase: path.join(__dirname, 'build'),
+            static: path.resolve(__dirname, 'build/bundle.js'),
             port: 3000,
             hot: true,
             compress: true,

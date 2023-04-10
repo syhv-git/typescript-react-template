@@ -1,4 +1,3 @@
-/// <reference types="react/next" />
 /// <reference types="@mui/material" />
 
 type PathsType = '/' | '/products' | '/FAQs';
