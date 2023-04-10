@@ -5,11 +5,11 @@ type PathsType = '/' | '/products' | '/FAQs';
 type ReducerType = 'SET_THEME';
 type ReducerActions = { type: ReducerType };
 
-type UUIDType = string;
+type UUIDType = string | Guid;
 
 interface ThemeContextType {
     state: { theme: string };
-    dispatch: React.Dispatch<ReducerActions>;
+    dispatch: Dispatch<ReducerActions>;
 }
 
 interface GlobalProps {
