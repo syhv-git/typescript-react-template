@@ -6,7 +6,7 @@ export const SessionProps: GlobalProps = {
     isAuth: false,
 };
 
-export const GlobalActions: GlobalStateActions = {
+export const GlobalStateActions: GlobalActions = {
     ThemeContext: createContext<ThemeContextType>({
         state: {
             theme: SessionProps.theme,

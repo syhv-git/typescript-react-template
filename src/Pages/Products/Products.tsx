@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../../assets/resources/logo.svg';
 
-const Products = () => {
+export default function Products() {
     return (
         <div className="home">
             <header className="App-header">

@@ -1,5 +1,9 @@
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+    createBrowserRouter,
+    RouteObject,
+    RouterProvider
+} from 'react-router-dom';
 import { NavBar } from './Components/NavBar/NavBar';
 import { Landing } from './Pages/Landing/Landing';
 import { Products } from './Pages/Products/Products';
@@ -12,9 +16,9 @@ import { SignIn } from "./Pages/SignIn/SignIn";
 import { Register } from "./Pages/Register/Register";
 import { ThemeProvider } from '@mui/material';
 import { GlobalReducer } from './GlobalUtility/Reducer';
-import { GlobalActions, SessionProps } from './GlobalUtility/Constants';
+import { GlobalStateActions, SessionProps } from './GlobalUtility/Constants';
 
-const router = createBrowserRouter([
+const routes: RouteObject[] = [
     {
         element: <NavBar />,
         children: [
@@ -23,9 +27,12 @@ const router = createBrowserRouter([
                 element: <Landing />,
             },
             {
+                path: 'FAQs',
+                element: <FAQ />,
+            },
+            {
                 path: 'products',
                 element: <Products />,
-                errorElement: <NotFound />,
             },
             {
                 path: 'my-account',
@@ -34,28 +41,21 @@ const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register />
-            }
-        ],
-    },
-    {
-        element: <Footer />,
-        children: [
-            {
-                path: 'FAQs',
-                element: <FAQ />,
             },
         ],
-    },
-]);
+    }
+];
+
+const router = createBrowserRouter(routes);
 
 export function App() {
     const [state, dispatch] = React.useReducer(GlobalReducer, SessionProps);
 
     return (
-        <GlobalActions.ThemeContext.Provider value={{ state, dispatch }}>
+        <GlobalStateActions.ThemeContext.Provider value={{ state, dispatch }}>
             <ThemeProvider theme={state.theme}>
                 <RouterProvider router={router} fallbackElement={<Loading />} />
             </ThemeProvider>
-        </GlobalActions.ThemeContext.Provider>
+        </GlobalStateActions.ThemeContext.Provider>
     );
 }
