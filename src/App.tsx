@@ -8,11 +8,9 @@ import FAQ from './Pages/FAQ/FAQ';
 import SignIn from './Pages/SignIn/SignIn';
 import { Register } from './Pages/Register/Register';
 import Dashboard from "./Pages/Dashboard/Dashboard";
-import {
-    ThemeProvider,
-    useMediaQuery
-} from '@mui/material';
-import { GlobalReducer } from './GlobalUtility/Reducer';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import GlobalReducer from './GlobalUtility/Reducer';
 import { GlobalStateActions, SessionProps } from './GlobalUtility/Constants';
 import { GetTheme } from "./GlobalUtility/Themes";
 

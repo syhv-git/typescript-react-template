@@ -1,9 +1,9 @@
 import React from 'react';
-import { styled } from '@mui/material/styles';
-import { Typography } from '@mui/material';
+import { Link } from "react-router-dom";
+import styled from '@mui/material/styles/styled';
+import Typography from '@mui/material/Typography';
 import instagram from '../../assets/resources/instagram.png';
 import twitter from '../../assets/resources/twitter.png'
-import { Link } from "react-router-dom";
 
 const EmptyBlock = styled('div')({
     display: 'flex',

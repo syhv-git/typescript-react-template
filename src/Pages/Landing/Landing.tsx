@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../assets/resources/logo.svg';
-import { styled } from '@mui/material/styles';
+import styled from '@mui/material/styles/styled';
 
 const HomeStyle = styled('div')({
     width: '100%',

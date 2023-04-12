@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import styled from '@mui/material/styles/styled';
 
 const ButtonLinker = styled(Link)({
     boxSizing: 'content-box',

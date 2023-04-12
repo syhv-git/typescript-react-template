@@ -1,7 +1,8 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { AppBar, Toolbar } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import styled from '@mui/material/styles/styled';
 import ButtonLink from '../Utility/ButtonLink/ButtonLink';
 import ThemeToggle from '../Utility/ThemeToggle/ThemeToggle';
 import logo from '../../assets/resources/logoC.png';

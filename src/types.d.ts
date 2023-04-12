@@ -1,4 +1,4 @@
-/// <reference types="@mui/material" />
+/// <reference types="@mui/material/styles" />
 
 type ReducerType = 'SET_THEME';
 type ReducerActions = { type: ReducerType };
