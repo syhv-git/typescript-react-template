@@ -13,12 +13,13 @@ const EmptyBlock = styled('div')({
 const FooterContainer = styled('div')({
     display: 'flex',
     minHeight: 256,
+    maxHeight: 256,
     backgroundColor: '#000370',
 });
 
 const FooterLeft = styled('div')({
     display: 'flex',
-    flex: 1,
+    flex: 0.75,
     flexFlow: 'column nowrap',
     justifyContent: 'center',
     alignItems: 'flex-end',
@@ -40,6 +41,7 @@ const FooterBlock = styled('div')({
     flexFlow: 'column wrap',
     justifyContent: 'center',
     alignItems: 'flex-start',
+    margin: '42px 0',
 });
 
 const FooterRight = styled('div')({
