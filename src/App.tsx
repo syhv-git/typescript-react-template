@@ -1,77 +1,78 @@
 import React from 'react';
 import { createBrowserRouter, RouteObject, RouterProvider } from 'react-router-dom';
 import NavBar from './Components/NavBar/NavBar';
+import Footer from './Components/Footer/Footer';
 import Landing from './Pages/Landing/Landing';
-import { Products } from './Pages/Products/Products';
-import { FAQ } from './Pages/FAQ/FAQ';
-import { Loading } from './Pages/Loading/Loading';
-import { Footer } from './Components/Footer/Footer';
-import { NotFound } from './Pages/Error/NotFound';
-import { Dashboard } from '@mui/icons-material';
-import { SignIn } from './Pages/SignIn/SignIn';
+import Products from './Pages/Products/Products';
+import FAQ from './Pages/FAQ/FAQ';
+import SignIn from './Pages/SignIn/SignIn';
 import { Register } from './Pages/Register/Register';
-import { ThemeProvider } from '@mui/material';
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import {
+    ThemeProvider,
+    useMediaQuery
+} from '@mui/material';
 import { GlobalReducer } from './GlobalUtility/Reducer';
 import { GlobalStateActions, SessionProps } from './GlobalUtility/Constants';
+import { GetTheme } from "./GlobalUtility/Themes";
 
 const routes: RouteObject[] = [
     {
         path: '/',
-        element: (
-            <>
-                <NavBar />
-                <Landing />
-                <Footer />
-            </>
-        ),
+        element: <NavBar />,
         children: [
             {
-                path: 'FAQs',
-                element: (
-                    <>
-                        <NavBar />
-                        <FAQ />
-                        <Footer />
-                    </>
-                ),
+                path: '/',
+                element: [
+                    <Landing />,
+                    <Footer />,
+                ]
             },
             {
                 path: 'products',
-                element: (
-                    <>
-                        <NavBar />
-                        <Products />
-                        <Footer />
-                    </>
-                ),
+                element: [
+                    <Products />,
+                    <Footer />,
+                ]
+            },
+            {
+                path: 'FAQs',
+                element: [
+                    <FAQ />,
+                    <Footer />,
+                ]
             },
             {
                 path: 'dashboard',
-                element: (
-                    <>
-                        <NavBar />
-                        <Dashboard />
-                        <Footer />
-                    </>
-                ),
+                element: [
+                    <Dashboard />,
+                    <Footer />,
+                ]
             },
-            {
-                path: 'register',
-                element: <Register />,
-            },
-        ],
+        ]
+    },
+    {
+        path: '/sign-in',
+        element: <SignIn />,
+    },
+    {
+        path: '/register',
+        element: <Register />,
     },
 ];
 
 const router = createBrowserRouter(routes);
 
-export function App() {
+export default function App() {
+    const mode = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
+    SessionProps.theme = GetTheme(mode)
+
     const [state, dispatch] = React.useReducer(GlobalReducer, SessionProps);
 
     return (
         <GlobalStateActions.ThemeContext.Provider value={{ state, dispatch }}>
             <ThemeProvider theme={state.theme}>
-                <RouterProvider router={router} fallbackElement={<Loading />} />
+                <RouterProvider router={router} />
             </ThemeProvider>
         </GlobalStateActions.ThemeContext.Provider>
     );

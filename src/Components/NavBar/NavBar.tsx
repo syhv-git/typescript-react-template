@@ -40,7 +40,7 @@ export default function NavBar() {
 
     const navList: Array<PathTitles> = [
         { title: 'Products', to: '/products' },
-        { title: 'My Account', to: '/my-account' },
+        { title: 'Account', to: '/dashboard' },
     ];
 
     const navGroup = navList.map((obj, i) => <ButtonLink key={i} title={obj.title} to={obj.to} />);
@@ -61,4 +61,4 @@ export default function NavBar() {
             <Outlet />
         </>
     );
-};
+}
