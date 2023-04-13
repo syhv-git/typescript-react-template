@@ -7,7 +7,7 @@ import {
     GlobalStateActions,
     router,
     SessionProps
-} from './GlobalUtility/Constants';
+} from './GlobalUtility/Constants/Constants';
 import { GetTheme } from "./GlobalUtility/Themes";
 
 export default function App() {

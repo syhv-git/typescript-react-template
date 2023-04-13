@@ -14,8 +14,8 @@ const darkTheme = createTheme({
     palette: {
         mode: 'dark',
         text: {
-            primary: '#3E3E3E',
-            secondary: '#DEDEDE',
+            primary: '#DEDEDE',
+            secondary: '#3E3E3E',
         },
     },
 });
