@@ -1,7 +1,7 @@
-import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { AppBar, Toolbar } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import styled from '@mui/material/styles/styled';
 import ButtonLink from '../Utility/ButtonLink/ButtonLink';
 import ThemeToggle from '../Utility/ThemeToggle/ThemeToggle';
 import logo from '../../assets/resources/logoC.png';
@@ -32,7 +32,7 @@ const NavRight = styled('span')({
     marginRight: 18,
 });
 
-export const NavBar = () => {
+export default function NavBar() {
     const Logo: PathTitles = {
         title: <LogoStyle src={logo} alt="logo" />,
         to: '/',
@@ -40,7 +40,7 @@ export const NavBar = () => {
 
     const navList: Array<PathTitles> = [
         { title: 'Products', to: '/products' },
-        { title: 'My Account', to: '/my-account' },
+        { title: 'Account', to: '/dashboard' },
     ];
 
     const navGroup = navList.map((obj, i) => <ButtonLink key={i} title={obj.title} to={obj.to} />);
@@ -61,4 +61,4 @@ export const NavBar = () => {
             <Outlet />
         </>
     );
-};
+}

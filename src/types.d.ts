@@ -1,13 +1,14 @@
-/// <reference types="@mui/material" />
+/// <reference types="react/next" />
+/// <reference types="@mui/material/styles" />
 
 type ReducerType = 'SET_THEME';
 type ReducerActions = { type: ReducerType };
 
 interface ThemeContextType {
     state: {
-        theme: Theme
+        theme: Theme;
     };
-    dispatch: React.Dispatch<ReducerActions>;
+    dispatch: Dispatch<ReducerActions>;
 }
 
 interface GlobalProps {
@@ -17,7 +18,7 @@ interface GlobalProps {
 }
 
 interface GlobalActions {
-    ThemeContext: React.Context<ThemeContextType>;
+    ThemeContext: Context<ThemeContextType>;
 }
 
 interface PathTitles {

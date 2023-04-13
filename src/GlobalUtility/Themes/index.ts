@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material';
+import createTheme from '@mui/material/styles/createTheme';
 
 const lightTheme = createTheme({
     palette: {
@@ -6,7 +6,7 @@ const lightTheme = createTheme({
         text: {
             primary: '#000000',
             secondary: '#FFFFFF',
-        }
+        },
     },
 });
 
@@ -14,9 +14,9 @@ const darkTheme = createTheme({
     palette: {
         mode: 'dark',
         text: {
-            primary: '#3E3E3E',
-            secondary: '#DEDEDE',
-        }
+            primary: '#DEDEDE',
+            secondary: '#3E3E3E',
+        },
     },
 });
 
