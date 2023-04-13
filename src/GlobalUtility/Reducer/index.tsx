@@ -8,6 +8,6 @@ export default function GlobalReducer(state: GlobalProps, action: ReducerActions
                 theme: SetTheme(state),
             };
         default:
-            return state;
+            throw Error('Unknown action: ' + action.type);
     }
 };
