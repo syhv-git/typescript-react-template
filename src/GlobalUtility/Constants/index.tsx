@@ -1,6 +1,9 @@
 import { createContext } from 'react';
 import { GetTheme } from '../Themes';
-import { RouteObject } from 'react-router-dom';
+import {
+    createBrowserRouter,
+    RouteObject
+} from 'react-router-dom';
 import NavBar from '../../Components/NavBar/NavBar';
 import Footer from '../../Components/Footer/Footer';
 import Landing from '../../Pages/Landing/Landing';
@@ -10,7 +13,7 @@ import SignIn from '../../Pages/SignIn/SignIn';
 import Register from '../../Pages/Register/Register';
 import Dashboard from '../../Pages/Dashboard/Dashboard';
 
-export const routes: RouteObject[] = [
+const routes: RouteObject[] = [
     {
         element: <NavBar />,
         children: [
@@ -48,6 +51,8 @@ export const routes: RouteObject[] = [
         element: <Register />,
     },
 ];
+
+export const router = createBrowserRouter(routes);
 
 export const SessionProps: GlobalProps = {
     theme: GetTheme('dark'),

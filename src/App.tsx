@@ -5,12 +5,10 @@ import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import GlobalReducer from './GlobalUtility/Reducer';
 import {
     GlobalStateActions,
-    routes,
+    router,
     SessionProps
 } from './GlobalUtility/Constants';
 import { GetTheme } from "./GlobalUtility/Themes";
-
-const router = createBrowserRouter(routes);
 
 export default function App() {
     const mode = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
