@@ -20,7 +20,7 @@ export default function Landing() {
     const { state } = useContext<ThemeContextType>(GlobalStateActions.ThemeContext);
 
     const themeColors = useMemo(() => {
-        return state.theme.palette.mode === 'dark' ? '#3E3E3E' : '#FFFFFF' ;
+        return state.theme.palette.text.secondary;
     }, [state.theme.palette.mode])
 
     return (
