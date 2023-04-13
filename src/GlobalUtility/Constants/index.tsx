@@ -20,35 +20,35 @@ const routes: RouteObject[] = [
             {
                 path: '/',
                 element: [
-                    <Landing />,
-                    <Footer />,
+                    <Landing key={"landing"} />,
+                    <Footer key={"footer"} />,
                 ]
             }, {
                 path: 'products',
                 element: [
-                    <Products />,
-                    <Footer />,
-                ]
-            }, {
-                path: 'FAQs',
-                element: [
-                    <FAQ />,
-                    <Footer />,
+                    <Products key={"products"} />,
+                    <Footer key={"footer"} />,
                 ]
             }, {
                 path: 'dashboard',
                 element: [
-                    <Dashboard />,
-                    <Footer />,
+                    <Dashboard key={"dashboard"} />,
+                    <Footer key={"footer"} />,
+                ]
+            }, {
+                path: 'FAQs',
+                element: [
+                    <FAQ key={"faq"} />,
+                    <Footer key={"footer"} />,
                 ]
             },
         ]
     }, {
         path: '/sign-in',
-        element: <SignIn />,
+        element: <SignIn key={"login"} />,
     }, {
         path: '/register',
-        element: <Register />,
+        element: <Register key={"register"} />,
     },
 ];
 

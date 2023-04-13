@@ -1,6 +1,6 @@
-import React from 'react';
-import { Stack } from "@mui/material";
 import ProductCard from "../../Components/ProductCard/ProductCard";
+import styled from "@mui/material/styles/styled";
+import Grid2 from "@mui/material/Unstable_Grid2";
 
 const defaultProducts: Product[] = [
     {
@@ -20,6 +20,10 @@ const defaultProducts: Product[] = [
     },
 ];
 
+const ProductLayout = styled('div')({
+    minHeight: 'calc(100vh - 320px)',
+});
+
 export default function Products() {
     const listProducts = defaultProducts.map((v) => (
         <div key={v.id}>
@@ -28,8 +32,10 @@ export default function Products() {
     ));
 
     return (
-        <Stack>
-            {listProducts}
-        </Stack>
+        <ProductLayout>
+            <Grid2>
+                { listProducts }
+            </Grid2>
+        </ProductLayout>
     );
 }

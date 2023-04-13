@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import GlobalReducer from './GlobalUtility/Reducer';
