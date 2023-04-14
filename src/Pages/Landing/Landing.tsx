@@ -20,11 +20,14 @@ export default function Landing() {
     const { state } = useContext<ThemeContextType>(GlobalStateActions.ThemeContext);
 
     const themeColors = useMemo(() => {
-        return state.theme.palette.text.secondary;
-    }, [state.theme.palette.mode])
+        return {
+            backgroundColor: state.theme.palette.text.secondary,
+            color: state.theme.palette.text.primary,
+        };
+    }, [state.theme.palette.mode]);
 
     return (
-        <div style={{backgroundColor: themeColors}}>
+        <div style={themeColors}>
             <HomeStyle>
                 <img src={logo} alt="logo" />
                 <p>
