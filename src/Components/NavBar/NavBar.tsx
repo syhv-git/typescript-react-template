@@ -25,12 +25,15 @@ const NavBlock = styled('span')({
     marginLeft: 18,
 });
 
-const NavRight = styled('span')({
+const NavRight = styled('span')(({ theme }) => ({
     display: 'flex',
     flex: 1,
     justifyContent: 'flex-end',
     marginRight: 18,
-});
+    [theme.breakpoints.down('sm')]: {
+        display: 'hidden !important',
+    }
+}));
 
 export default function NavBar() {
     const Logo: PathTitles = {
