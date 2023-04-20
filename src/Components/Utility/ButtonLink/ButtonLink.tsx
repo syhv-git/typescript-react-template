@@ -9,6 +9,7 @@ const ButtonLinker = styled(Link)({
 });
 
 const NavButtonIcon = styled(Button)({
+    minWidth: '42px',
     margin: '0 5px !important',
     borderRadius: `50% !important`,
     textTransform: 'none',
@@ -36,7 +37,7 @@ export default function ButtonLink(props: PathTitles) {
         </ButtonLinker>
     ) : (
         <ButtonLinker to={props.to}>
-            <NavButtonIcon sx={{ minWidth: '42px' }}>{props.title}</NavButtonIcon>
+            <NavButtonIcon>{props.title}</NavButtonIcon>
         </ButtonLinker>
     );
 }
