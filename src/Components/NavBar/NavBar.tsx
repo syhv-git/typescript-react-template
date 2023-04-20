@@ -46,8 +46,6 @@ export default function NavBar() {
         { title: 'Account', to: '/dashboard' },
     ];
 
-    const navGroup = navList.map((obj, i) => <ButtonLink key={i} title={obj.title} to={obj.to} />);
-
     return (
         <>
             <AppBar position="sticky">
@@ -55,7 +53,9 @@ export default function NavBar() {
                     <NavLeft>
                         <ButtonLink title={Logo.title} to={Logo.to} />
                     </NavLeft>
-                    <NavBlock>{navGroup}</NavBlock>
+                    <NavBlock>
+                        { navList.map((obj, i) => <ButtonLink key={i} title={obj.title} to={obj.to} />) }
+                    </NavBlock>
                     <NavRight>
                         <ThemeToggle />
                     </NavRight>
