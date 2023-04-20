@@ -17,15 +17,15 @@ export default function ProductNarrowing() {
         {
             src: logo,
             title: 'All Products',
-            to: 'products/all',
+            to: 'all',
         }, {
             src: cat,
             title: 'Cats',
-            to: 'products/cats',
+            to: 'cats',
         }, {
             src: dog,
             title: 'Dogs',
-            to: 'products/dogs',
+            to: 'dogs',
         }
     ];
 
