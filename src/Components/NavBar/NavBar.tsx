@@ -25,12 +25,15 @@ const NavBlock = styled('span')({
     marginLeft: 18,
 });
 
-const NavRight = styled('span')({
+const NavRight = styled('span')(({ theme }) => ({
     display: 'flex',
     flex: 1,
     justifyContent: 'flex-end',
     marginRight: 18,
-});
+    [theme.breakpoints.down('sm')]: {
+        display: 'hidden !important',
+    }
+}));
 
 export default function NavBar() {
     const Logo: PathTitles = {
@@ -43,8 +46,6 @@ export default function NavBar() {
         { title: 'Account', to: '/dashboard' },
     ];
 
-    const navGroup = navList.map((obj, i) => <ButtonLink key={i} title={obj.title} to={obj.to} />);
-
     return (
         <>
             <AppBar position="sticky">
@@ -52,7 +53,9 @@ export default function NavBar() {
                     <NavLeft>
                         <ButtonLink title={Logo.title} to={Logo.to} />
                     </NavLeft>
-                    <NavBlock>{navGroup}</NavBlock>
+                    <NavBlock>
+                        { navList.map((obj, i) => <ButtonLink key={i} title={obj.title} to={obj.to} />) }
+                    </NavBlock>
                     <NavRight>
                         <ThemeToggle />
                     </NavRight>

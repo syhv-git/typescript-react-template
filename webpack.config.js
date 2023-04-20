@@ -48,9 +48,6 @@ module.exports = (env, argv) => {
             ],
         },
         resolve: {
-            alias: {
-                '@mui/styled-engine': '@mui/styled-engine-sc',
-            },
             extensions: ['.tsx', '.ts', '.js'],
         },
         plugins: [

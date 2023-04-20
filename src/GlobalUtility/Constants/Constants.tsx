@@ -12,6 +12,8 @@ import FAQ from '../../Pages/FAQ/FAQ';
 import SignIn from '../../Pages/SignIn/SignIn';
 import Register from '../../Pages/Register/Register';
 import Dashboard from '../../Pages/Dashboard/Dashboard';
+import ProductNarrowing from "../../Pages/ProductNarrowing/ProductNarrowing";
+import ProductShowcase from "../../Pages/ProductShowcase/ProductShowcase";
 
 const routes: RouteObject[] = [
     {
@@ -26,11 +28,25 @@ const routes: RouteObject[] = [
             }, {
                 path: 'products',
                 element: [
+                    <ProductNarrowing key={"productNarrowing"} />,
+                    <Footer key={"footer"} />,
+                ]
+            }, {
+                path: 'products/:category',
+                element: [
                     <Products key={"products"} />,
                     <Footer key={"footer"} />,
                 ]
             }, {
+                path: 'products/showcase/:id',
+                loader: async () => {},
+                element: [
+                    <ProductShowcase key={"productShowcase"} />,
+                    <Footer key={"footer"} />,
+                ]
+            }, {
                 path: 'dashboard',
+                loader: async () => {},
                 element: [
                     <Dashboard key={"dashboard"} />,
                     <Footer key={"footer"} />,
@@ -55,7 +71,7 @@ const routes: RouteObject[] = [
 export const router = createBrowserRouter(routes);
 
 export const SessionProps: GlobalProps = {
-    theme: GetTheme('dark'),
+    theme: GetTheme('light'),
     isAuth: false,
 };
 

@@ -25,3 +25,7 @@ interface PathTitles {
     title: JSX.Element | string;
     to: string;
 }
+
+interface ImagePathTitles extends PathTitles {
+    src: string;
+}
