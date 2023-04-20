@@ -58,12 +58,12 @@ const IconImg = styled('img')({
     alignSelf: 'flex-end',
 });
 
-const StyledLink = styled(Link)({
+const StyledLink = styled(Link)(({ theme }) => ({
     textDecoration: 'none',
-    color: 'white',
+    color: theme.palette.text.primary,
     marginLeft: 25,
     padding: '5px 0px',
-});
+}));
 
 export default function Footer() {
     const icons = [
@@ -79,14 +79,6 @@ export default function Footer() {
         },
     ];
 
-    const listIcon = icons.map((ico) => {
-        return (
-            <a href={ico.to} rel={"noopener noreferrer"} key={ico.name}>
-                <IconImg key={ico.name} src={ico.src} alt={ico.name}/>
-            </a>
-        );
-    })
-
     const listPT: PathTitles[] = [{
       title: 'Home',
       to: '/',
@@ -101,26 +93,30 @@ export default function Footer() {
       to: '/FAQs',
     }];
 
-    const listLinks = listPT.map((e) => (
-      <StyledLink to={e.to} key={e.title}>
-        <Typography>
-          {e.title}
-        </Typography>
-      </StyledLink>
-    ));
-
     return (
         <FooterContainer>
             <FooterLeft>
                 <EmptyBlock/>
                     <IconBlock>
-                        { listIcon }
+                        { icons.map((ico) => {
+                            return (
+                                <a href={ico.to} rel={"noopener noreferrer"} key={ico.name}>
+                                    <IconImg key={ico.name} src={ico.src} alt={ico.name}/>
+                                </a>
+                            );
+                        }) }
                     </IconBlock>
                 <EmptyBlock/>
             </FooterLeft>
             <br />
             <FooterBlock>
-                { listLinks }
+                { listPT.map((e, i) => (
+                    <StyledLink to={e.to} key={e.to}>
+                        <Typography>
+                            {e.title}
+                        </Typography>
+                    </StyledLink>
+                )) }
             </FooterBlock>
             <FooterRight>
                 <Typography>Contact Us</Typography>
