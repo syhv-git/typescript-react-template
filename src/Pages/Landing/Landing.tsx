@@ -1,10 +1,5 @@
 import logo from '../../assets/resources/logo.svg';
 import styled from '@mui/material/styles/styled';
-import { GlobalStateActions } from "../../GlobalUtility/Constants/Constants";
-import {
-    useContext,
-    useMemo
-} from "react";
 
 const HomeStyle = styled('div')(({ theme }) => ({
     width: '100%',
